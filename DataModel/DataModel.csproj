@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D7C2318-82FE-4CE4-A4EE-4DC95A4E003E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataModel</RootNamespace>
+    <AssemblyName>DataModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBActions\DbActions.cs" />
+    <Compile Include="DBActions\IDbActions.cs" />
+    <Compile Include="DBObjects\Correspondence.cs" />
+    <Compile Include="DBObjects\DocumentFile.cs" />
+    <Compile Include="DBObjects\ArtFile.cs" />
+    <Compile Include="Migrations\201903151400436_SIMSDB-v4.cs" />
+    <Compile Include="Migrations\201903151400436_SIMSDB-v4.Designer.cs">
+      <DependentUpon>201903151400436_SIMSDB-v4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityObjects\LoginStatus.cs" />
+    <Compile Include="DBObjects\Lookups\CorrespondenceTypeLookup.cs" />
+    <Compile Include="DBObjects\Lookups\DocumentTypeLookup.cs" />
+    <Compile Include="DBObjects\Lookups\PaymentTypeLookup.cs" />
+    <Compile Include="DBObjects\OrderShipment.cs" />
+    <Compile Include="DBObjects\OrderPayment.cs" />
+    <Compile Include="DBObjects\OrderPrice.cs" />
+    <Compile Include="DBObjects\Lookups\OrderStatusLookup.cs" />
+    <Compile Include="DBObjects\Lookups\OrderTypeLookup.cs" />
+    <Compile Include="DBObjects\Customer.cs" />
+    <Compile Include="DBObjects\OrderHeader.cs" />
+    <Compile Include="DBObjects\OrderNote.cs" />
+    <Compile Include="DBObjects\Lookups\FeeLookup.cs" />
+    <Compile Include="DBObjects\Lookups\ItemLookup.cs" />
+    <Compile Include="DBObjects\CustomerNote.cs" />
+    <Compile Include="DBObjects\Role.cs" />
+    <Compile Include="DBObjects\UserSecurity.cs" />
+    <Compile Include="DBObjects\User.cs" />
+    <Compile Include="DBObjects\Address.cs" />
+    <Compile Include="DBObjects\Contact.cs" />
+    <Compile Include="DBObjects\Lookups\AddressTypeLookup.cs" />
+    <Compile Include="DBObjects\PhoneNumber.cs" />
+    <Compile Include="DBObjects\Lookups\PhoneNumberTypeLookup.cs" />
+    <Compile Include="DBObjects\Lookups\StateLookup.cs" />
+    <Compile Include="Migrations\201903130217052_SIMSDB-v1.cs" />
+    <Compile Include="Migrations\201903130217052_SIMSDB-v1.Designer.cs">
+      <DependentUpon>201903130217052_SIMSDB-v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903142101111_SIMSDB0v2.cs" />
+    <Compile Include="Migrations\201903142101111_SIMSDB0v2.Designer.cs">
+      <DependentUpon>201903142101111_SIMSDB0v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903142107050_SIMSDB-v3.cs" />
+    <Compile Include="Migrations\201903142107050_SIMSDB-v3.Designer.cs">
+      <DependentUpon>201903142107050_SIMSDB-v3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIMSDataDBContext.cs" />
+    <Compile Include="GenericRepository\GenericRepository.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DBScripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903130217052_SIMSDB-v1.resx">
+      <DependentUpon>201903130217052_SIMSDB-v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903142101111_SIMSDB0v2.resx">
+      <DependentUpon>201903142101111_SIMSDB0v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903142107050_SIMSDB-v3.resx">
+      <DependentUpon>201903142107050_SIMSDB-v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903151400436_SIMSDB-v4.resx">
+      <DependentUpon>201903151400436_SIMSDB-v4.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

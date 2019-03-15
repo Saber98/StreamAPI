@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamApi", "StreamApi\StreamApi.csproj", "{4CB1BFF4-1AA1-4D03-9A5B-3AA9821A45E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessEntities", "BusinessEntities\BusinessEntities.csproj", "{7F00ADAB-6EB2-4C8D-8237-4D2C0A4CBD04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessServices", "BusinessServices\BusinessServices.csproj", "{242A9ED3-EF91-4746-B4F1-9E7E36B3C0EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resolver", "Resolver\Resolver.csproj", "{63A4C0E7-F279-42DA-A60D-C94905A7922C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{0D7C2318-82FE-4CE4-A4EE-4DC95A4E003E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONGenerator", "JSONGenerator\JSONGenerator.csproj", "{1C4E0640-9F44-49E4-87F4-5CBCC8B064DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityGenerator", "SecurityGenerator\SecurityGenerator.csproj", "{92D534EA-4E15-4878-8A79-863368A18C5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CB1BFF4-1AA1-4D03-9A5B-3AA9821A45E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CB1BFF4-1AA1-4D03-9A5B-3AA9821A45E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CB1BFF4-1AA1-4D03-9A5B-3AA9821A45E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CB1BFF4-1AA1-4D03-9A5B-3AA9821A45E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F00ADAB-6EB2-4C8D-8237-4D2C0A4CBD04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F00ADAB-6EB2-4C8D-8237-4D2C0A4CBD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F00ADAB-6EB2-4C8D-8237-4D2C0A4CBD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F00ADAB-6EB2-4C8D-8237-4D2C0A4CBD04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{242A9ED3-EF91-4746-B4F1-9E7E36B3C0EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{242A9ED3-EF91-4746-B4F1-9E7E36B3C0EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{242A9ED3-EF91-4746-B4F1-9E7E36B3C0EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{242A9ED3-EF91-4746-B4F1-9E7E36B3C0EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63A4C0E7-F279-42DA-A60D-C94905A7922C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63A4C0E7-F279-42DA-A60D-C94905A7922C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63A4C0E7-F279-42DA-A60D-C94905A7922C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63A4C0E7-F279-42DA-A60D-C94905A7922C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D7C2318-82FE-4CE4-A4EE-4DC95A4E003E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D7C2318-82FE-4CE4-A4EE-4DC95A4E003E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D7C2318-82FE-4CE4-A4EE-4DC95A4E003E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D7C2318-82FE-4CE4-A4EE-4DC95A4E003E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C4E0640-9F44-49E4-87F4-5CBCC8B064DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C4E0640-9F44-49E4-87F4-5CBCC8B064DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C4E0640-9F44-49E4-87F4-5CBCC8B064DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C4E0640-9F44-49E4-87F4-5CBCC8B064DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92D534EA-4E15-4878-8A79-863368A18C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D534EA-4E15-4878-8A79-863368A18C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D534EA-4E15-4878-8A79-863368A18C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D534EA-4E15-4878-8A79-863368A18C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
