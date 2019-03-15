@@ -56,21 +56,21 @@ namespace StreamApi.Controllers
                 : Request.CreateErrorResponse(HttpStatusCode.NotFound, "No User Security found for this id");
         }
 
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin")]
         // POST: api/State
         public int Post([FromBody]UserSecurityModel userSecurity)
         {
             return _userSecurityServices.Create(userSecurity);
         }
 
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin")]
         // PUT: api/State/5
         public bool Put(int id, [FromBody]UserSecurityModel userSecurity)
         {
             return id > 0 && _userSecurityServices.Update(id, userSecurity);
         }
 
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin")]
         // DELETE: api/State/5
         public bool Delete(int id)
         {
