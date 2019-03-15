@@ -15,7 +15,6 @@ using BusinessServices.Interfaces;
 namespace StreamApi.Controllers
 {
     [JwtAuthenticationFilter]
-    [Authorize(Roles = "Admin")]
     public class UserSecurityController : ApiController
     {
         private readonly IUserSecurityServices _userSecurityServices;
@@ -57,18 +56,21 @@ namespace StreamApi.Controllers
                 : Request.CreateErrorResponse(HttpStatusCode.NotFound, "No User Security found for this id");
         }
 
+        [Authorize(Roles = "Admin, User")]
         // POST: api/State
         public int Post([FromBody]UserSecurityModel userSecurity)
         {
             return _userSecurityServices.Create(userSecurity);
         }
 
+        [Authorize(Roles = "Admin, User")]
         // PUT: api/State/5
         public bool Put(int id, [FromBody]UserSecurityModel userSecurity)
         {
             return id > 0 && _userSecurityServices.Update(id, userSecurity);
         }
 
+        [Authorize(Roles = "Admin, User")]
         // DELETE: api/State/5
         public bool Delete(int id)
         {
