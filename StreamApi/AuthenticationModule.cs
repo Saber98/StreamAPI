@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Web;
+using BusinessEntities;
 using SecurityServices;
 
 namespace StreamApi
@@ -25,17 +26,23 @@ namespace StreamApi
             return _validationError;
         }
         // The Method is used to generate token for user
-        public string GenerateTokenForUser(string userName, int userId, string[] roles)
+        public string GenerateTokenForUser(UserSecurityModel userSecurity, string[] roles)
         {
             var signingKey = new InMemorySymmetricSecurityKey(Encoding.UTF8.GetBytes(CommunicationKey));
             var now = DateTime.UtcNow;
             var signingCredentials = new SigningCredentials(signingKey,
                SecurityAlgorithms.HmacSha256Signature, SecurityAlgorithms.Sha256Digest);
 
+            var fullName = string.Empty;
+            if (userSecurity.User.Contact != null)
+            {
+                fullName = userSecurity.User.Contact.FirstName + " " + userSecurity.User.Contact.LastName;
+            }
             var claimsIdentity = new ClaimsIdentity(new List<Claim>()
             {
-                new Claim(ClaimTypes.Name, userName),
-                new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
+                new Claim(ClaimTypes.Name, userSecurity.User.UserName),
+                new Claim(ClaimTypes.NameIdentifier, userSecurity.User.Id.ToString()),
+                new Claim(ClaimTypes.GivenName, fullName)
                 //new Claim(ClaimTypes.Role, "All"),
                 //new Claim(ClaimTypes.Role, "Admin")
             }, "Custom");
@@ -108,11 +115,13 @@ namespace StreamApi
 
         public JwtAuthenticationIdentity PopulateUserIdentity(JwtSecurityToken userPayloadToken)
         {
+            string fullName = ((userPayloadToken)).Claims.FirstOrDefault(m => m.Type == "given_name").Value;
+
             string name = ((userPayloadToken)).Claims.FirstOrDefault(m => m.Type == "unique_name").Value;
             string userId = ((userPayloadToken)).Claims.FirstOrDefault(m => m.Type == "nameid").Value;
 
             List<Claim> roles = userPayloadToken.Claims.Where(m => m.Type == "role").ToList();
-            var jwtAuthIdentiy = new JwtAuthenticationIdentity(name) { UserId = Convert.ToInt32(userId), UserName = name };
+            var jwtAuthIdentiy = new JwtAuthenticationIdentity(name) { UserId = Convert.ToInt32(userId), UserName = name, FullName = fullName};
             
             foreach (var role in roles)
             {

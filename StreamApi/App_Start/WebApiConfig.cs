@@ -13,6 +13,7 @@ namespace StreamApi
     {
         public static void Register(HttpConfiguration config)
         {
+            config.EnableCors();
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
@@ -23,10 +24,15 @@ namespace StreamApi
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            config.Routes.MapHttpRoute(
+            config.Routes.MapHttpRoute( 
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "ControllerAndAction",
+                routeTemplate: "api/{controller}/{action}"
             );
         }
     }
